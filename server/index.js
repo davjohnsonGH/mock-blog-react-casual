@@ -10,9 +10,15 @@ server.listen(port, () => {
  console.log('JSON Server is running')
 })
 
-server.get('/data', (request, response) => {
+server.get('/data/blog', (request, response) => {
     if (request.method === 'GET') {
-    const data = require('./data/index')
+    const data = require('./data/blog')
+    response.status(200).jsonp(data())
+    }
+})
+server.get('/data/blogs', (request, response) => {
+    if (request.method === 'GET') {
+    const data = require('./data/blogs')
     response.status(200).jsonp(data())
     }
 })

@@ -8,14 +8,12 @@ module.exports = () => {
         description: casual.description,
         sentences: casual.sentences(n = 30),
       };
-    });    
+    });
     const data = {
-      blog: []
-    };
-    console.log()
-    // Create 100 users
+        blogs: []
+    }
     for (let i = 0; i < 100; i++) {
-      data.blog.push(casual.blog);
+        data.blogs.push(casual.blog);
     }
     return data;
   };
