@@ -1,33 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { render } from "react-dom";
 import "@babel/polyfill";
+//helpers
+import { fetchData } from "./common/common";
+import { urls } from "./common/config";
 
 const App = () => {
 
+    const [menuOptions, setMenuOptions] = useState([]);
     const [blog, setBlog] = useState({});
     const [blogs, setBlogs] = useState([]);
 
     useEffect( () => {
 
-        const fetchBlog = async () => {
-            const response = await fetch("http://localhost:3000/data/blog");
-            const jsonData = await response.json();
-            setBlog(jsonData);
-        }
-        
-        
-        const fetchBlogs = async () => {
-            const response = await fetch("http://localhost:3000/data/blogs");
-            const jsonData = await response.json();
-            setBlogs(jsonData.blogs);
-        }
+        // fetch menu options
+        fetchData (urls.baselocalhost + urls.menuoptions).then( (data) => { setMenuOptions(data) } );   
+        // fetch blog
+        fetchData (urls.baselocalhost + urls.blog).then( (data) => { setBlog(data) } );   
+        // fetch blogs
+        fetchData (urls.baselocalhost + urls.blogs).then( (data) => { setBlogs(data.blogs) } );   
 
-        fetchBlogs();
-        fetchBlog();        
-        
     }, [])
 
     return (
+        
         <div>
             <h1>single blog</h1>
             <h2>{ blog.title }</h2>

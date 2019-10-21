@@ -22,3 +22,9 @@ server.get('/data/blogs', (request, response) => {
     response.status(200).jsonp(data())
     }
 })
+server.get('/data/menu-options', (request, response) => {
+    if (request.method === 'GET') {
+    const data = require('./data/menu-options')
+    response.status(200).jsonp(data())
+    }
+})
