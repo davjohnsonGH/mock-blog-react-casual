@@ -8,7 +8,7 @@ const HorizontalNav = (props) => {
         <ul>
             {props.menuOptions.map( ( { name, id }, index) => (
                 <li key = { name + id + index }>
-                    <a>{ name }</a>
+                    <a> { name } </a>
                 </li>
             ))}
         </ul>
