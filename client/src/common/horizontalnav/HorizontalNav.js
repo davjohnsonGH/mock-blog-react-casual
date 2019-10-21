@@ -1,15 +1,17 @@
 import React from "react";
-import "./HorizontalNav";
+import "./HorizontalNav.css";
 
 const HorizontalNav = (props) => {
-    console.log(props)
 
     return (
 
-        <div>
-
-
-        </div>
+        <ul>
+            {props.menuOptions.map( ( { name }) => (
+                <li>
+                    <a>{ name }</a>
+                </li>
+            ))}
+        </ul>
     )
 
 }
