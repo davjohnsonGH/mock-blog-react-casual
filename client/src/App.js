@@ -4,6 +4,8 @@ import "@babel/polyfill";
 //helpers
 import { fetchData } from "./common/common";
 import { urls } from "./common/config";
+// components 
+import HorizontalNav from "./common/horizontalnav/HorizontalNav";
 
 const App = () => {
 
@@ -25,6 +27,7 @@ const App = () => {
     return (
         
         <div>
+            <HorizontalNav menuOptions = { menuOptions }/>
             <h1>single blog</h1>
             <h2>{ blog.title }</h2>
             <h3>{ blog.short_description }</h3>
