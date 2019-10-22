@@ -1,8 +1,8 @@
 module.exports = () => {
       return [
           {
-              name: "menu option 0", 
-              id: "menu-0"
+              name: "Main", 
+              id: "main"
             }, {
                 name: "menu option 1", 
                 id: "menu-1"
