@@ -8,9 +8,8 @@ const Main = () => {
     return (
         <div>
             <div className="header">
-                <h2>Blog Name</h2>
+                <h2>Main</h2>
             </div>
-
             <div className="row">
                 <div className="leftcolumn">
                     <div className="card">
@@ -44,10 +43,6 @@ const Main = () => {
                     </div>
                 </div>                  
             </div>
-
-
-
-
             <div className="footer">
                 <h2>Footer</h2>
             </div>
