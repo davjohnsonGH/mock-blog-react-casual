@@ -28,7 +28,7 @@ const HorizontalNav = (props) => {
                 </Route>
             </Switch>
             <Switch>
-                <Route path="/:id" children={<Section />} />
+                <Route path="/:id" children={<Section menuOptions={ props.menuOptions }/>} />
             </Switch>            
         </Router>
     )
