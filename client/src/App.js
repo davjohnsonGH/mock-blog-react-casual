@@ -34,12 +34,13 @@ const App = () => {
             <h4>{ blog.description }</h4>
             <p>{ blog.sentences }</p>
             <h1>mutiple blog</h1>       
-            {blogs.map( ( { title, short_description, description, sentences }, index ) => (
+            {blogs.map( ( { title, short_description, description, sentences, url }, index ) => (
                 <div key= {title + index} >
                     <h2>{ title }</h2>
                     <h3>{ short_description }</h3>
                     <h4>{ description }</h4>
                     <p>{ sentences }</p>
+                    <a>{ url }</a>
                 </div>
             ))}
          
