@@ -8,7 +8,7 @@ import { urls } from "./common/config";
 import HorizontalNav from "./common/horizontalnav/HorizontalNav";
 
 const App = () => {
-
+    
     const [menuOptions, setMenuOptions] = useState([]);
     const [blog, setBlog] = useState({});
     const [blogs, setBlogs] = useState([]);
