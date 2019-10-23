@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams} from "react-router";
+import { Link } from "react-router-dom";
 // helpers
 import { fetchData } from "../common/common";
 import { urls } from "../common/config";
@@ -30,12 +31,14 @@ const Section = (props) => {
             <div className="row">
                 <div className="leftcolumn">
                     {sectionData.length > 0 && sectionData.map(( { title, short_description, description }, index) => (
-                        <div key = { title + index } className="card">
-                            <h2>{title}</h2>
-                            <h5>{ short_description }</h5>
-                            <img className="fakeimg" style={ styles }/>                     
-                            <p>{ description }</p>
-                        </div>
+                        <Link key = { title + index } to="/" >
+                            <div key = { title + index } className="card">
+                                <h2>{title}</h2>
+                                <h5>{ short_description }</h5>
+                                <img className="fakeimg" style={ styles }/>                     
+                                <p>{ description }</p>
+                            </div>
+                        </Link>
                     )) }
                 </div>                  
             </div>

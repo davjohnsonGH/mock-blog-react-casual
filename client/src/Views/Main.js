@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 // helpers
 import { fetchData } from "../common/common";
 import { urls } from "../common/config";
@@ -25,12 +26,14 @@ const Main = () => {
             <div className="row">
                 <div className="leftcolumn">
                     {mainData.length > 0 && mainData.map(( { title, short_description, description }, index) => (
-                        <div key = { title + index } className="card">
-                            <h2>{title}</h2>
-                            <h5>{ short_description }</h5>
-                            <div className="fakeimg" style={ styles }>Image</div>
-                            <p>{ description }</p>
-                        </div>
+                        <Link key = { title + index } to="menu-3" >
+                            <div className="card">
+                                <h2>{title}</h2>
+                                <h5>{ short_description }</h5>
+                                <div className="fakeimg" style={ styles }>Image</div>
+                                <p>{ description }</p>
+                            </div>
+                        </Link>
                     )) }
                 </div>                  
             </div>
