@@ -13,13 +13,13 @@ const Section = (props) => {
     const sectionName = props.menuOptions.length > 0 && props.menuOptions.filter( (section) => section.id === id )[0].name    
     const styles = {
         height: "200px"
-    }
+    };
 
     useEffect (() => {
 
         fetchData (urls.baselocalhost + urls.blogs).then( (data) => { setSectionData(data.blogs) } );   
 
-    }, [id])
+    }, [ id ]);
 
 
     return (

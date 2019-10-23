@@ -10,11 +10,11 @@ const Main = () => {
     const [ mainData, setMainData ] = useState([]);
     const styles = {
         height: "200px"
-    }
+    };
 
     useEffect (() => {
         fetchData (urls.baselocalhost + urls.blogs).then( (data) => { setMainData(data.blogs) } );   
-    }, []) 
+    }, []);
 
 
     return (
@@ -30,7 +30,7 @@ const Main = () => {
                             <div className="card">
                                 <h2>{title}</h2>
                                 <h5>{ short_description }</h5>
-                                <div className="fakeimg" style={ styles }>Image</div>
+                                <img className="fakeimg" style={ styles }/>
                                 <p>{ description }</p>
                             </div>
                         </Link>
