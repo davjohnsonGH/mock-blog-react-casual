@@ -7,7 +7,6 @@ module.exports = () => {
         short_description: casual.short_description,
         description: casual.description,
         sentences: casual.sentences(n = 30),
-        url: "www.test.com",
       };
     });
     const data = {

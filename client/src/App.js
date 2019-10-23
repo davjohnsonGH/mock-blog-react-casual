@@ -17,10 +17,6 @@ const App = () => {
 
         // fetch menu options
         fetchData (urls.baselocalhost + urls.menuoptions).then( (data) => { setMenuOptions(data) } );   
-        // fetch blog
-        fetchData (urls.baselocalhost + urls.blog).then( (data) => { setBlog(data) } );   
-        // fetch blogs
-        fetchData (urls.baselocalhost + urls.blogs).then( (data) => { setBlogs(data.blogs) } );   
 
     }, [])
 
@@ -28,22 +24,6 @@ const App = () => {
         
         <div>
             <HorizontalNav menuOptions = { menuOptions }/>
-            <h1>single blog</h1>
-            <h2>{ blog.title }</h2>
-            <h3>{ blog.short_description }</h3>
-            <h4>{ blog.description }</h4>
-            <p>{ blog.sentences }</p>
-            <h1>mutiple blog</h1>       
-            {blogs.map( ( { title, short_description, description, sentences, url }, index ) => (
-                <div key= {title + index} >
-                    <h2>{ title }</h2>
-                    <h3>{ short_description }</h3>
-                    <h4>{ description }</h4>
-                    <p>{ sentences }</p>
-                    <a>{ url }</a>
-                </div>
-            ))}
-         
         </div>
     )
 
